@@ -1,4 +1,6 @@
 
+
+// project details
 const Projects = [
     {
         title:'Multicolumn layout',
@@ -39,8 +41,31 @@ const Projects = [
 
 
 const countLabel = document.querySelector('.count');
+const linkedin = document.querySelector('#linkedin');
+const github = document.querySelector('#github');
+const resume = document.querySelector('#resume');
+
+const linkedinUrl = 'https://www.linkedin.com/in/mandar-borhade/';
+const githubUrl = 'https://github.com/MandarBorhade';
+const resumeUrl = 'https://drive.google.com/file/d/1uDJw6DutRRtdS-w8QA54aDcGTpN30-pv/view?usp=share_link';
+
+linkedin.addEventListener('click' , () => {
+    window.open(linkedinUrl);
+})
+
+github.addEventListener('click' , () => {
+    window.open(githubUrl);
+})
+
+resume.addEventListener('click' , () => {
+    window.open(resumeUrl);
+})
+
+//displaying project count
 countLabel.textContent = Projects.length
 
+
+//creating cards
 Projects.map((project) => {
     const projectGallery = document.querySelector('.project-gallery');
     const cardElement = document.createElement('DIV');
@@ -48,7 +73,7 @@ Projects.map((project) => {
     const cardTitleElement = document.createElement('P');
     const rightArrowIconElement = document.createElement('IMG');
     const projectPreviewElement = document.createElement('DIV');
-    // const projectMockup = document.createElement('IMG');
+
 
     projectGallery.appendChild(cardElement);
     cardElement.className = 'card';
@@ -64,52 +89,11 @@ Projects.map((project) => {
 
     cardElement.appendChild(projectPreviewElement);
     projectPreviewElement.className = 'project-preview';
-    // projectPreviewElement.appendChild(projectMockup);
     projectPreviewElement.setAttribute('style' , `background: url(${project.preview}) no-repeat center center / contain;`)
 
     rightArrowIconElement.addEventListener('click' , () => {
         window.open(project.liveUrl);
     })
 })
-
-// myProjects.map((item) => {
-//     const cardWrapperElement = document.querySelector('.cards-wrapper');
-//     const cardDiv = document.createElement('DIV');
-//     const cardTitle = document.createElement('DIV');
-//     const projectLabel = document.createElement('DIV');
-//     const h1 = document.createElement('H1');
-//     const a = document.createElement('A');
-//     const sitePreview = document.createElement('DIV');
-
-//     cardWrapperElement.appendChild(cardDiv);
-//     cardDiv.className = 'card';
-//     cardDiv.appendChild(cardTitle);
-//     cardTitle.className = 'card-title';
-//     cardTitle.appendChild(projectLabel);
-//     projectLabel.className = 'project-label';
-//     projectLabel.appendChild(h1);
-//     h1.textContent = item.title;
-//     projectLabel.appendChild(a);
-//     a.textContent = 'Live Site';
-
-//     a.addEventListener('click', () => {
-//         window.open(item.liveUrl);
-//     })
-
-//     cardDiv.appendChild(sitePreview);
-//     sitePreview.className = 'site-preview';
-//     sitePreview.setAttribute('style', `background: url(${item.preview}) center center / cover;height: 100%;border-radius: 2.6rem;`)
-// })
-
-
-
-
-
-
-
-
-
-
-
 
 
